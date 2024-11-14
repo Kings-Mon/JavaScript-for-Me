@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little more about DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+        // const docQS = document.querySelector('.language')
+        // docQS.appendChild(li)
+    }
+    addLanguage("Python")
+    addLanguage("Java")
+
+    function addOptiLang(langName) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLang('C++')
+    addOptiLang('TypeScript')
+
+    // Edit elment
+
+    const elementEdit = document.querySelector("li:nth-child(2)")
+    // console.log(elementEdit);
+    // elementEdit.innerHTML = "Ruby"
+    const newLi = document.createElement('li')
+    newLi.textContent = "Ruby"
+    elementEdit.replaceWith(newLi)
+
+    // Edit and replace
+
+    const replaceEdit = document.querySelector("li:first-child")    //("li:nth-child(1)")
+    console.log(replaceEdit);
+    replaceEdit.outerHTML = '<li>C</li>'
+
+    // Remove 
+
+    const removeElement = document.querySelector("li:last-child")
+    console.log(removeElement);
+    removeElement.remove()
+    
+</script>
+</html>
